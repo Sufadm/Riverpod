@@ -19,7 +19,7 @@ class BottomNavState extends StateNotifier<int> {
   static final List<Widget> _widgetOptions = <Widget>[
     const HomePage(),
     const ApiList(),
-    ProfilePage(),
+    const ProfilePage(),
   ];
 
   List<Widget> get widgetOptions => _widgetOptions;
