@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpodproject/services/services.dart';
+import 'package:riverpodproject/controller/services/api_services.dart';
 
 class ApiList extends ConsumerWidget {
   const ApiList({super.key});
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.read(taskUserData);
     final apidata = ref.watch(taskUserData);
     final datas = apidata.tasklist;
 
@@ -20,6 +19,7 @@ class ApiList extends ConsumerWidget {
           title: const Text('Tasks'),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             apidata.tasklist.isEmpty
                 ? const Center(
